@@ -1,0 +1,44 @@
+.font {
+  font-family: 'Cinzel', serif;
+  color: white;
+}
+
+
+.contact {
+  font-family: 'Cinzel', serif;
+  color: black;
+  font-size: 13pt;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 7px;
+}
+
+.repNameSingle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 1.3em;
+  font-size: 28pt;
+}
+
+.repNameSingle > a {
+  color: white;
+}
+
+.textRed {
+  background-color: hsla(0,50%,50%,1);
+}
+
+.textBlue {
+  background-color: hsla(240,50%,70%,1);
+}
+
+.donorData {
+  font-family: 'Cinzel', serif;
+  color: black;
+  font-size: 8pt;
+}

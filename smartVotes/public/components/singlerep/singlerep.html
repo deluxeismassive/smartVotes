@@ -1,0 +1,24 @@
+<div>
+  <div class="namePlate">
+    <div class="repNameSingle font" ng-class="{textBlue: $ctrl.rep.single[0].current_party == 'D', textRed: $ctrl.rep.single[0].current_party == 'R'}">
+      {{$ctrl.rep.single[0].first_name}} {{$ctrl.rep.single[0].last_name}}
+      <a href="http://{{$ctrl.rep.single[0].domain}}" ng-if="$ctrl.rep.single[0].domain">{{$ctrl.rep.single[0].domain}}</a>
+    </div>
+    <div class="contact">
+      <span class="contactInfo">Age: {{$ctrl.getAge()}}</span>
+      <span class="contactInfo">{{$ctrl.rep.single[0].roles.length}} Terms in the House</span>
+      <span class="contactInfo">Phone: {{$ctrl.rep.single[0].roles[0].phone}}</span>
+      <span class="contactInfo">Address: {{$ctrl.rep.single[0].roles[0].office}}</span>
+
+    </div>
+  </div>
+  <div class="dataBody">
+    <div class="voteHistory">
+
+    </div>
+    <div class="donorData" ng-repeat="donations in $ctrl.rep.donors">
+      {{donations['@attributes'].org_name}}       ${{donations['@attributes'].total*1}}
+
+    </div>
+  </div>
+</div>

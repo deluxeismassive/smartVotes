@@ -1,0 +1,97 @@
+.hero {
+  height: 60px;
+  width: 100%;
+  /*border-bottom: solid 1px black;*/
+ background: -webkit-linear-gradient(left, white , red); /* For Safari 5.1 to 6.0 */
+ background: -o-linear-gradient(right, white, red); /* For Opera 11.1 to 12.0 */
+ background: -moz-linear-gradient(right, white, red); /* For Firefox 3.6 to 15 */
+ background: linear-gradient(to right, white , red); /* Standard syntax */
+ font-family: 'Cinzel', serif;
+}
+
+.smartVotes {
+  padding-top: 5px;
+  margin-left: 15px;
+  height: 60px;
+  background-image: url('../../images/SV.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;;
+}
+
+.motto {
+  margin-top: 6px;
+  margin-right: 60px;
+  font-size: 22pt;
+}
+
+.bodyContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.menuColumn {
+  height: 600px;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Cinzel', serif;
+  color: hsla(100, 50%, 5%, 1);
+  font-size: 26pt;
+  text-align: center;
+}
+
+.menuColumn:hover {
+  font-size: 30pt;
+}
+
+.footer {
+  width: 100%;
+  height: 60px;
+  background: -webkit-linear-gradient(left, blue , white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, blue, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, blue, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, blue , white); /* Standard syntax */
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+}
+
+.reps {
+  background-image: url('../../images/chamber.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.bills {
+  background-image: url('../../images/congress.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.commitees {
+  background-image: url('../../images/hearings.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.votes {
+  background-image: url('../../images/vote.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.flagImg {
+  height: 60px;
+  width: 100%;
+  background-image: url('../../images/flag.jpg');
+  opacity: .6;
+  background-repeat: none;
+  background-size: cover;
+}
