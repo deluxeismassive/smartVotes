@@ -24,3 +24,10 @@ svg .state:hover , .state.active {
     display: inline-block;
     width: 48%;
 }
+
+
+
+.maptest {
+  display: flex;
+  align-items: center;
+}
