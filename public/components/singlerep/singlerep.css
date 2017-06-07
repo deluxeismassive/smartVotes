@@ -33,13 +33,13 @@
 }
 
 .textRed {
-  border: 2px solid hsl(0,50%,50%);
+  border-bottom: 2px solid hsl(0,50%,50%);
   background: white;
   color: hsl(0,50%,50%);
 }
 
 .textBlue {
-  border: 2px solid hsl(240,50%,70%);
+  border-bottom: 2px solid hsl(240,50%,70%);
   background: white;
   color: hsl(240,50%,70%);
 }
@@ -71,12 +71,6 @@
 
 .dataBody {
   font-family: 'Cinzel', serif;
-}
-
-.nameplate {
-  position: fixed;
-  left: 0;
-  top: 0;
 }
 
 .donorDataSingle {

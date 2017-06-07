@@ -25,9 +25,28 @@ svg .state:hover , .state.active {
     width: 48%;
 }
 
-
-
 .maptest {
+  height: 600px;
   display: flex;
+  flex-direction: row;
   align-items: center;
+}
+
+.mapPosition {
+  margin-left: 80px;
+}
+
+.choose {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 2px solid hsl(0,50%,50%);
+  margin-left: -50px;
+  height: 400px;
+}
+
+.chooseText {
+  color: hsl(0,50%,50%);
+  font-family: 'Cinzel', serif;
+  font-size: 60pt;
 }
