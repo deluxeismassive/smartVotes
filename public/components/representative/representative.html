@@ -28,7 +28,7 @@
         </div>
       </div>
 
-      <div class="main" ng-repeat="sen in $ctrl.senators | orderBy: 'seniorityt*1'" ng-class="{blue: sen.party == 'D', red: sen.party == 'R'}" ng-show="showPage.houseToggle">
+      <div class="main" ng-repeat="sen in $ctrl.senators | orderBy: 'seniorityt*1'" ng-class="{blue: sen.party == 'D', red: sen.party == 'R'}" ng-show="showPage.houseToggle" ng-click="$ctrl.getRep(sen.api_uri)">
         <div class="info">
           <div class="repName">
             {{sen.name}}

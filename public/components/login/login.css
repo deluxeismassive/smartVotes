@@ -2,10 +2,10 @@
   height: 60px;
   width: 100%;
   /*border-bottom: solid 1px black;*/
- background: -webkit-linear-gradient(left, white , red); /* For Safari 5.1 to 6.0 */
- background: -o-linear-gradient(right, white, red); /* For Opera 11.1 to 12.0 */
- background: -moz-linear-gradient(right, white, red); /* For Firefox 3.6 to 15 */
- background: linear-gradient(to right, white , red); /* Standard syntax */
+ background: -webkit-linear-gradient(left, white , hsl(0,50%,50%)); /* For Safari 5.1 to 6.0 */
+ background: -o-linear-gradient(right, white, hsl(0,50%,50%)); /* For Opera 11.1 to 12.0 */
+ background: -moz-linear-gradient(right, white, hsl(0,50%,50%)); /* For Firefox 3.6 to 15 */
+ background: linear-gradient(to right, white , hsl(0,50%,50%)); /* Standard syntax */
  font-family: 'Cinzel', serif;
 }
 
@@ -34,13 +34,14 @@
 }
 
 .menuColumn {
-  height: 600px;
+  height: 645px;
   width: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Cinzel', serif;
-  color: hsla(100, 50%, 5%, 1);
+  color: white;
+  text-shadow: 2px 2px 2px black;
   font-size: 26pt;
   text-align: center;
 }
@@ -52,10 +53,10 @@
 .footer {
   width: 100%;
   height: 60px;
-  background: -webkit-linear-gradient(left, blue , white); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(right, blue, white); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(right, blue, white); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to right, blue , white); /* Standard syntax */
+  background: -webkit-linear-gradient(left, hsl(240,50%,70%) , white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, hsl(240,50%,70%), white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, hsl(240,50%,70%), white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, hsl(240,50%,70%) , white); /* Standard syntax */
   position: fixed;
   bottom: 0px;
   left: 0px;
@@ -65,7 +66,6 @@
   background-image: url('../../images/chamber.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
 }
 
 .bills {
@@ -78,7 +78,6 @@
   background-image: url('../../images/hearings.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
 }
 
 .votes {

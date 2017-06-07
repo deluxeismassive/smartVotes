@@ -2,16 +2,22 @@
   border: solid 2px green;
 }
 
-.fa {
-  color: white;
+.fa-twitter {
+  color: hsl(240,50%,70%);
   font-size: 150pt;
+}
+
+.fa-youtube {
+  color: hsl(0,50%,50%);
+  font-size: 150pt;
+  font-size: 20pt;
 }
 
 .wholePage {
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -32,12 +38,12 @@
 .card {
   overflow: scroll;
   width: 100%;
-  height: 500px;
+  height: 560px;
   font-family: 'Cinzel', serif;
   font-size: 12pt;
-  color: black;
+  color: white;
   margin-top: 5px;
-  margin-left: 20px;
+  /*text-shadow: 2px 2px 2px black;*/
 }
 
 .details {
@@ -46,31 +52,46 @@
 }
 
 .red {
-  background-color: hsla(0,50%,50%,.8);
+  border: 2px solid hsl(0,50%,50%);
+  background: white;
+  color: hsl(0,50%,50%);
 }
 
 .blue {
-  background-color: hsla(240,50%,70%,.8);
+  border: 2px solid hsl(240,50%,70%);
+  background: white;
+  color: hsl(240,50%,70%);
 }
 
 .repName {
-  font-size: 15pt;
+  font-size: 18pt;
   padding-bottom: .1em;
+  margin-top: 3px;
+  margin-left: 6px;
 }
 
 .indent {
-  padding-left: .3em;
+  padding-left: 2.4em;
   margin-top: .05em;
+  font-size: 13pt;
 }
 
 .houseSenateToggleButton {
+  color: white;
+  background-color: darkgrey;
   width: 40%;
   height: 1.6em;
+  border: none;
+  text-shadow: 1px 1px 10px grey;
 }
 
 .backToMap {
+  color: white;
+  background-color: darkgrey;
   width: 15%;
   height: 1.6em;
+  border: none;
+  text-shadow: 1px 1px 10px grey;
 }
 
 .buttonHouse {
@@ -79,7 +100,6 @@
   font-size: 12pt;
   color: black;
   margin-top: 10px;
-  margin-left: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;

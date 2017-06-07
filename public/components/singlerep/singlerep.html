@@ -1,4 +1,4 @@
-<div>
+<div class="wholeSingleRep" ng-show="$ctrl.show.repDetails">
   <div class="namePlate">
     <div class="repNameSingle font" ng-class="{textBlue: $ctrl.rep.single[0].current_party == 'D', textRed: $ctrl.rep.single[0].current_party == 'R'}">
       {{$ctrl.rep.single[0].first_name}} {{$ctrl.rep.single[0].last_name}}
@@ -12,13 +12,60 @@
 
     </div>
   </div>
-  <div class="dataBody">
-    <div class="voteHistory">
+  <div class="dataBody" ng-show="$ctrl.show.donorDetails">
+
+    <div class="donationsTitle" ng-class="{headerBlue: $ctrl.rep.single[0].current_party == 'D', headerRed: $ctrl.rep.single[0].current_party == 'R'}">
+      <span class="totalDonations">Donations ${{$ctrl.getSectorTotal()}} </span>
+    </div>
+    <div class="donationData">
+      <div class="largestDonors">
+        <div class="largestDonorsTitle">
+          Largest Donors
+        </div>
+        <div class="donorData" ng-repeat="donations in $ctrl.rep.donors" >
+          <div class="donorDataSingle">
+            {{donations['@attributes'].org_name}}       ${{donations['@attributes'].total*1}}
+          </div>
+        </div>
+        <p class="largestTotal">Total of ${{$ctrl.getTotal()}}</p>
+      </div>
+      <div class="sectorGraph">
+        <div class="largestDonorsTitle">
+          Industry/Sector Contributions
+        </div>
+
+        <div class="graphBar" >
+          <div class="graphEle" ng-style="{'width' : $ctrl.getEleWidth(sector['@attributes'].total*1)+'%', 'background-color': 'hsl('+$ctrl.getColor(sector['@attributes'].total*1)+', 50%, 70%)'}" ng-repeat="sector in $ctrl.rep.sectors" ng-mouseover="$ctrl.showMessage = sector['@attributes'].sector_name+'          $'+sector['@attributes'].total">
+          </div>
+        </div>
+        <div class="sectorMessage">
+          <div class="message">
+            {{$ctrl.showMessage}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="donationsTitle" ng-class="{headerBlue: $ctrl.rep.single[0].current_party == 'D', headerRed: $ctrl.rep.single[0].current_party == 'R'}">
+      Voting History
 
     </div>
-    <div class="donorData" ng-repeat="donations in $ctrl.rep.donors">
-      {{donations['@attributes'].org_name}}       ${{donations['@attributes'].total*1}}
+    <div class="historyBody">
+      <div class="missedVotes percentDisplay">
+        {{$ctrl.rep.single[0].roles[0].missed_votes_pct}}% </br>
+        <span class="percentFooters">Votes Missed</span>
+      </div>
 
+      <div class="votesWithParty percentDisplay">
+        {{$ctrl.rep.single[0].roles[0].votes_with_party_pct}}% </br>
+        <span class="percentFooters">Voted with Party</span>
+      </div>
+    </div>
+    <div class="donationsTitle" ng-class="{headerBlue: $ctrl.rep.single[0].current_party == 'D', headerRed: $ctrl.rep.single[0].current_party == 'R'}">
+      Committees
+    </div>
+    <div class="committees" ng-repeat="committee in $ctrl.rep.single[0].roles[0].committees">
+      {{committee.name}}
     </div>
   </div>
 </div>

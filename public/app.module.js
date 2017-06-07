@@ -7,6 +7,8 @@
     this.houseToggle = false;
     this.repModule = true;
     this.login = true;
+    this.repDetails = false;
+    this.donorDetails = false;
   })
   .service('params', function () {
     this.senate = []
@@ -16,6 +18,7 @@
   .service('repData', function () {
     this.single = {}
     this.donors = {}
+    this.sectors ={}
   })
 
 

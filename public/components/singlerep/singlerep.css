@@ -1,3 +1,10 @@
+.wholeSingleRep {
+  /*margin-top: 14px;*/
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: 560px;
+  overflow: scroll;
+}
+
 .font {
   font-family: 'Cinzel', serif;
   color: white;
@@ -25,20 +32,134 @@
   font-size: 28pt;
 }
 
-.repNameSingle > a {
-  color: white;
-}
-
 .textRed {
-  background-color: hsla(0,50%,50%,1);
+  border: 2px solid hsl(0,50%,50%);
+  background: white;
+  color: hsl(0,50%,50%);
 }
 
 .textBlue {
-  background-color: hsla(240,50%,70%,1);
+  border: 2px solid hsl(240,50%,70%);
+  background: white;
+  color: hsl(240,50%,70%);
 }
 
-.donorData {
+.donationsTitle {
+  height: 1.3em;
+  margin-bottom: 13px;
+  margin-top: 7px;
+  color: white;
+  font-size: 18pt;
   font-family: 'Cinzel', serif;
+  padding-top: .25em;
+  padding-left: 10px;
+}
+
+.headerBlue {
+  background: -webkit-linear-gradient(left, hsl(240,50%,70%) , white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, hsl(240,50%,70%), white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, hsl(240,50%,70%), white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, hsl(240,50%,70%) , white); /* Standard syntax */
+}
+
+.headerRed {
+  background: -webkit-linear-gradient(left, hsl(0,50%,50%) , white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(right, hsl(0,50%,50%), white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(right, hsl(0,50%,50%), white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to right, hsl(0,50%,50%) , white); /* Standard syntax */
+}
+
+.dataBody {
+  font-family: 'Cinzel', serif;
+}
+
+.nameplate {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.donorDataSingle {
+  margin-top: 6px;
+  margin-left: 5px;
   color: black;
-  font-size: 8pt;
+  font-size: 12pt;
+}
+
+.largestDonors {
+  width: 30%;
+}
+
+.largestDonorsTitle {
+  font-size: 16pt;
+}
+
+.sectorGraph {
+  width: 65%;
+}
+
+.graphBar {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+}
+
+.graphEle {
+  height: 100px;
+}
+
+.largestTotal {
+  margin-top: 4px;
+  border-top: solid 1px black;
+  padding-top: .2em;
+  font-size: 16pt;
+  margin-bottom: 6px;
+}
+
+.donationData {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.largestDonorsTitle {
+  border-bottom: solid 1px black;
+  margin-bottom: 4px;
+}
+
+.message {
+  font-size: 16pt;
+  margin-top: 10px;
+}
+
+.sectorMessage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.historyBody {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 7px;
+}
+
+.percentFooters {
+  font-size: 14pt;
+}
+
+.percentDisplay {
+  display: flex;
+  justify-content: center;
+  font-size: 40pt;
+  align-items: center;
+}
+
+.committees {
+  text-align: center;
+  font-size: 14pt;
 }
