@@ -20,6 +20,9 @@
     this.donors = {}
     this.sectors ={}
   })
+  .constant('APP_CONFIG', {
+    api_baseurl: /\/\/localhost/.test(location.href) ? '//localhost:3000' : 'https://smartvotes.herokuapp.com'
+  })
 
 
 })();

@@ -7,7 +7,7 @@
       controller: representative
     });
 
-    function representative($http, showPage, params, repData) {
+    function representative($http, showPage, params, repData, APP_CONFIG) {
       const vm = this
       vm.toggle = showPage
       vm.showMod = showPage
@@ -15,7 +15,7 @@
       params.renderCongress = function() {
         $http({
           method: 'GET',
-          url: '/people/house/'+params.state_id
+          url: APP_CONFIG.api_baseurl+'/people/house/'+params.state_id
         }).then(function (response) {
           vm.reps = response.data.results;
         }, function(response) {
@@ -24,7 +24,7 @@
 
         $http({
           method: 'GET',
-          url: '/people/senate/'+params.state_id
+          url: APP_CONFIG.api_baseurl+'/people/senate/'+params.state_id
         }).then(function (response) {
           vm.senators = response.data.results;
         }, function(response) {
@@ -38,21 +38,21 @@
         vm.showMod.donorDetails = false
         $http({
           method: 'GET',
-          url: '/people/single/'+id
+          url: APP_CONFIG.api_baseurl+'/people/single/'+id
         }).then(function (response) {
           vm.rep = response.data.results;
           repData.single = vm.rep
           console.log(repData.single);
           $http({
             method: 'GET',
-            url: '/people/donors/'+repData.single[0].crp_id
+            url: APP_CONFIG.api_baseurl+'/people/donors/'+repData.single[0].crp_id
           }).then(function (response) {
             vm.donors = response.data.response.contributors.contributor
             repData.donors = vm.donors
 
             $http({
               method: 'GET',
-              url: '/people/sector/'+repData.single[0].crp_id
+              url: APP_CONFIG.api_baseurl+'/people/sector/'+repData.single[0].crp_id
             }).then(function (response) {
               vm.showMod.repDetails = true
               vm.showMod.donorDetails = true
