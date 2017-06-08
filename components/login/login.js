@@ -7,9 +7,10 @@
       controller: login
     });
 
-    function login(showPage) {
+    function login(showPage, authService) {
       const vm = this
       vm.show = showPage
+      vm.auth = authService
 
       vm.representativeToggle = function() {
         vm.show.login = !vm.show.login

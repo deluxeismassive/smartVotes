@@ -1,0 +1,13 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] CLI Version:  3.2.1
+[debug] Platform:     darwin
+[debug] Node Version: v7.5.0
+[debug] Time:         Thu Jun 08 2017 11:47:55 GMT-0600 (MDT)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[info] Starting Firebase development server...
+[info] 
+[info] Project Directory: /Users/nathanedlen/galvanize/unit-4/capstone/smartVotesFrontEnd
+[info] 
+[info] Server listening at: http://localhost:5000

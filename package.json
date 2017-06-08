@@ -1,0 +1,27 @@
+{
+  "name": "smartvotesfrontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.module.js",
+  "dependencies": {
+    "angular-auth0": "^2.0.0-beta.2",
+    "angular-loading-spinner": "0.0.3",
+    "angular-spinner": "^1.0.1",
+    "auth0-js": "^8.7.0",
+    "ui-router": "^1.0.0-alpha.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deluxeismassive/smartVotes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deluxeismassive/smartVotes/issues"
+  },
+  "homepage": "https://github.com/deluxeismassive/smartVotes#readme"
+}

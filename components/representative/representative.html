@@ -8,7 +8,7 @@
       <button class="houseSenateToggleButton" type="button" name="sens" ng-click="showPage.houseToggle = true">Senate</button>
     </div>
 
-
+    <span us-spinner="{radius:30, width:8, length: 16}"></span>
     <div class="card">
       <div class="main" ng-repeat="rep in $ctrl.reps | orderBy: 'district*1'" ng-class="{blue: rep.party == 'D', red: rep.party == 'R'}" ng-hide="showPage.houseToggle" ng-click="$ctrl.getRep(rep.api_uri)">
         <div class="info">
