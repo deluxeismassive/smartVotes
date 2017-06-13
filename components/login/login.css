@@ -94,3 +94,10 @@
   background-repeat: none;
   background-size: cover;
 }
+
+.loginButton {
+  height: 50%;
+  width: 5%;
+  background: none;
+  border: solid 2px;
+}

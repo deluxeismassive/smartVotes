@@ -16,6 +16,11 @@
         vm.show.login = !vm.show.login
         vm.show.map = !vm.show.map
       }
+
+      vm.gotoVotes = function() {
+        vm.show.login = !vm.show.login
+        vm.show.votes = !vm.show.votes
+      }
     }
 
 })()

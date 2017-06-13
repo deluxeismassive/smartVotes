@@ -8,7 +8,7 @@
 
   authService.$inject = ['$state', 'angularAuth0', '$timeout'];
 
-  function authService($state, angularAuth0, $timeout) {
+  function authService($state, angularAuth0, $timeout, showPage) {
 
     var userProfile;
 
@@ -34,7 +34,7 @@
     }
 
     function login() {
-      angularAuth0.authorize();
+        angularAuth0.authorize();
     }
 
     function handleAuthentication() {

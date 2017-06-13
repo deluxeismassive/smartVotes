@@ -9,8 +9,10 @@
   <div class="menuColumn commitees">
     Commitees
   </div>
-  <div class="menuColumn votes">
-    Create a  </br> Voting Profie
-    <button type="button" name="button" ng-click="$ctrl.auth.login()">login</button>
+  <div class="menuColumn votes" ng-if="!$ctrl.auth.isAuthenticated()" ng-click="$ctrl.auth.login()">
+    Login
+  </div>
+  <div class="menuColumn votes" ng-if="$ctrl.auth.isAuthenticated()" ng-click="$ctrl.gotoVotes()">
+    VOTE
   </div>
 </div>

@@ -1,0 +1,36 @@
+.voteRecordBody {
+  font-family: 'Cinzel', serif;
+  width: 90%;
+  margin: auto;
+  margin-top: 5%;
+}
+
+.billHeader {
+  font-size: 18pt;
+}
+
+.billTitle {
+  font-size: 16pt;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.billBody {
+  font-size: 13t;
+  margin-top: 5px;
+  margin-left: 9px;
+}
+
+.directionButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.voteButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}

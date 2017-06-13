@@ -21,6 +21,7 @@
   this.login = true;
   this.repDetails = false;
   this.donorDetails = false;
+  this.votes = false;
   })
   .constant('APP_CONFIG', {
     api_baseurl: /\/\/localhost/.test(location.href) ? '//localhost:3000' : 'https://smartvotes.herokuapp.com'
