@@ -33,7 +33,6 @@
       }
 
       vm.getRep = function(key) {
-        console.log(JSON.parse(localStorage.getItem('profile')).given_name);
         var id = key.slice(-12,-5)
         vm.showMod.donorDetails = false
         $http({
