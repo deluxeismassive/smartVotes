@@ -7,16 +7,23 @@
       controller: voterecord
     });
 
-    function voterecord($http, showPage, repData, APP_CONFIG, $window) {
+    function voterecord($http, showPage, repData, APP_CONFIG, $window, votes) {
       const vm = this
       vm.selector = 0
       vm.show = showPage
+      vm.votes = votes
+      vm.billArray = []
 
 
       $http({
         method: 'GET',
         url: APP_CONFIG.api_baseurl+'/bills/api'
       }).then(function (response) {
+        var tempArray = response.data.results[0].bills
+        tempArray.forEach((bill) => {
+          vm.billArray.push(bill.bill_uri)
+        });
+        vm.votes.billURIarray = vm.billArray;;
       }, function(response) {
       })
 
@@ -29,21 +36,25 @@
         console.log(response);
       })
 
+
+
       vm.yesVote = function(index) {
-        var vote = {bill_id: vm.votesDb[vm.selector].id, yes_no: true, user_id: localStorage.userId}
+        var vote = {bill_id: vm.votesDb[vm.selector].id, yes_no: true, user_id: localStorage.userId, bill_uri: vm.votesDb[vm.selector].bill_uri}
         $http({
           method: 'PUT',
           url: APP_CONFIG.api_baseurl+'/votes',
           data: vote
         }).then(function (response) {
           console.log(response);
+          console.log(vm.votes);
         }, function(response) {
           console.log(response);
         })
       }
 
       vm.noVote = function(index) {
-        var vote = {bill_id: vm.votesDb[vm.selector].id, yes_no: false, user_id: localStorage.userId}
+        console.log(vm.votesDb);
+        var vote = {bill_id: vm.votesDb[vm.selector].id, yes_no: false, user_id: localStorage.userId, bill_uri: vm.votesDb[vm.selector].bill_uri}
         $http({
           method: 'PUT',
           url: APP_CONFIG.api_baseurl+'/votes',

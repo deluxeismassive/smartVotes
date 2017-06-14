@@ -1,8 +1,7 @@
 .wholeSingleRep {
   /*margin-top: 14px;*/
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  height: 560px;
-  overflow: scroll;
+  margin-top: 10px;
 }
 
 .font {
@@ -53,6 +52,21 @@
   font-family: 'Cinzel', serif;
   padding-top: .25em;
   padding-left: 10px;
+}
+
+.donationsTitleVotes {
+  height: 1.3em;
+  margin-bottom: 13px;
+  margin-top: 7px;
+  color: white;
+  font-size: 18pt;
+  font-family: 'Cinzel', serif;
+  padding-top: .25em;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .headerBlue {
@@ -156,4 +170,16 @@
 .committees {
   text-align: center;
   font-size: 14pt;
+}
+
+.compareVotes {
+  width: 30%;
+  height: 90%;
+  border: 2px solid hsl(240,50%,70%);
+  color: hsl(240,50%,70%);
+  background: none;
+  outline: none;
+  font-size: 12pt;
+  background-color: white;
+  margin-right: 10px;
 }

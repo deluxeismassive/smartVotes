@@ -45,9 +45,9 @@
       </div>
     </div>
 
-    <div class="donationsTitle" ng-class="{headerBlue: $ctrl.rep.single[0].current_party == 'D', headerRed: $ctrl.rep.single[0].current_party == 'R'}">
+    <div class="donationsTitleVotes" ng-class="{headerBlue: $ctrl.rep.single[0].current_party == 'D', headerRed: $ctrl.rep.single[0].current_party == 'R'}">
       Voting History
-
+      <button type="button" name="button" class="compareVotes" ng-click="$ctrl.compareVotes()">COMPARE VOTES</button>
     </div>
     <div class="historyBody">
       <div class="missedVotes percentDisplay">
@@ -58,6 +58,10 @@
       <div class="votesWithParty percentDisplay">
         {{$ctrl.rep.single[0].roles[0].votes_with_party_pct}}% </br>
         <span class="percentFooters">Voted with Party</span>
+      </div>
+      <div class="votesWithParty percentDisplay">
+        {{$ctrl.voteScore}}% </br>
+        <span class="percentFooters">Alligned </br> {{$ctrl.votes.userVotes.length}} Votes</span>
       </div>
     </div>
     <div class="donationsTitle" ng-class="{headerBlue: $ctrl.rep.single[0].current_party == 'D', headerRed: $ctrl.rep.single[0].current_party == 'R'}">

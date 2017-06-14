@@ -23,6 +23,9 @@
   this.donorDetails = false;
   this.votes = false;
   })
+  .service('votes', function () {
+    this.userVotes = []
+  })
   .constant('APP_CONFIG', {
     api_baseurl: /\/\/localhost/.test(location.href) ? '//localhost:3000' : 'https://smartvotes.herokuapp.com'
   })

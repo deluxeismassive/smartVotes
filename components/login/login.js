@@ -7,11 +7,22 @@
       controller: login
     });
 
-    function login(showPage, authService, $http, APP_CONFIG) {
+    function login(showPage, authService, $http, APP_CONFIG, votes) {
       const vm = this
+      vm.votes = votes
       vm.show = showPage
       vm.auth = authService
 
+      vm.email = JSON.parse(localStorage.profile).email
+      $http({
+        method: 'GET',
+        url: APP_CONFIG.api_baseurl+'/votes/'+vm.email
+      }).then(function (response) {
+        vm.votes.userVotes = response.data
+        console.log(vm.votes.userVotes);
+      }, function(response) {
+        console.log(response);
+      })
 
       vm.representativeToggle = function() {
         vm.show.login = !vm.show.login
@@ -21,15 +32,6 @@
       vm.gotoVotes = function() {
         vm.show.login = !vm.show.login
         vm.show.votes = !vm.show.votes
-        vm.email = JSON.parse(localStorage.profile).email
-        $http({
-          method: 'GET',
-          url: APP_CONFIG.api_baseurl+'/votes/'+vm.email
-        }).then(function (response) {
-          console.log(response);
-        }, function(response) {
-          console.log(response);
-        })
       }
 
 
