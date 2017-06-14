@@ -1,24 +1,24 @@
-<div class="voteRecordBody test" ng-show="$ctrl.show.votes">
-  <div class="directionButtons">
-    <button type="button" name="button" ng-click="$ctrl.forwardCycle()"><</button>
-    <button type="button" name="button" ng-click="$ctrl.forwardCycle()">></button>
-  </div>
-  <div class="billHeader">
-    {{$ctrl.votesDb[$ctrl.selector].number}}
-  </div>
-  <div class="billTitle">
-    {{$ctrl.votesDb[$ctrl.selector].title}}
-  </div>
-  <div class="billBody">
-    {{$ctrl.votesDb[$ctrl.selector].summary}}
-  </div>
+<div class="voteRecordBody" ng-show="$ctrl.show.votes">
+  <button type="button" name="button" ng-click="$ctrl.forwardCycle()" class="directionButtons"><</button>
+  <div class="billInfo">
+    <div class="billHeader">
+      {{$ctrl.votesDb[$ctrl.selector].number}}
+      <div class="voteCount">
+        {{$ctrl.selector+1}}/{{$ctrl.votesDb.length}}
+      </div>
+    </div>
+    <div class="billTitle">
+      {{$ctrl.votesDb[$ctrl.selector].title}}
+    </div>
+    <div class="billBody">
+      {{$ctrl.votesDb[$ctrl.selector].summary}}
+    </div>
 
-  <div class="voteButtons">
-    <button type="button" name="button">Yes</button>
-    <button type="button" name="button">No</button>
+    <div class="voteButtons">
+      <button type="button" name="button" class="voteButton" ng-click="$ctrl.yesVote($crtl.selector)">Yes</button>
+      <button type="button" name="button" ng-click="$ctrl.displayPdf()" class="pdfButton">PDF</button>
+      <button type="button" name="button" class="voteButton" ng-click="$ctrl.noVote($ctrl.selector)">No</button>
+    </div>
   </div>
-  <div class="directionButtons">
-    <button type="button" name="button" ng-click="">PDF</button>
-  </div>
-
+  <button type="button" name="button" class="directionButtons" ng-click="$ctrl.forwardCycle()">></button>
 </div>

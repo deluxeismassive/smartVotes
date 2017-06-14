@@ -6,13 +6,13 @@
     .module('app')
     .service('authService', authService);
 
-  authService.$inject = ['$state', 'angularAuth0', '$timeout'];
+  authService.$inject = ['$state', 'angularAuth0', '$timeout', '$http', 'APP_CONFIG'];
 
-  function authService($state, angularAuth0, $timeout, showPage) {
+  function authService($state, angularAuth0, $timeout, $http, APP_CONFIG) {
 
     var userProfile;
 
-    function getProfile(cb) {
+    function getProfile() {
       var accessToken = localStorage.getItem('access_token');
       if (!accessToken) {
         throw new Error('Access token must exist to fetch profile');
@@ -20,13 +20,22 @@
       angularAuth0.client.userInfo(accessToken, function(err, profile) {
         if (profile) {
           setUserProfile(profile);
+          $http({
+            method: 'GET',
+            url: APP_CONFIG.api_baseurl+'/users/'+profile.email
+          }).then(function (response) {
+            localStorage.setItem('userId', response.data[0].id)
+            console.log(response.data[0].id);
+          }, function(response) {
+            console.log('err');
+          })
         }
-        cb(err, profile);
       });
     }
 
     function setUserProfile(profile) {
       userProfile = profile;
+      localStorage.setItem('profile', JSON.stringify(profile))
     }
 
     function getCachedProfile() {
@@ -34,13 +43,14 @@
     }
 
     function login() {
-        angularAuth0.authorize();
+      angularAuth0.authorize();
     }
 
     function handleAuthentication() {
       angularAuth0.parseHash(function(err, authResult) {
         if (authResult && authResult.accessToken && authResult.idToken) {
           setSession(authResult);
+          getProfile()
           $state.go('home');
         } else if (err) {
           $timeout(function() {

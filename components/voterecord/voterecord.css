@@ -3,10 +3,22 @@
   width: 90%;
   margin: auto;
   margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.voteCount {
+  font-family: 'Cinzel', serif;
+  font-size: 12pt;
 }
 
 .billHeader {
-  font-size: 18pt;
+  font-size: 22pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .billTitle {
@@ -17,15 +29,8 @@
 
 .billBody {
   font-size: 13t;
-  margin-top: 5px;
+  margin-top: 25px;
   margin-left: 9px;
-}
-
-.directionButtons {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 }
 
 .voteButtons {
@@ -33,4 +38,49 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  margin-top: 40px;
+}
+
+.voteButton {
+  border: 2px solid hsl(0,50%,50%);
+  background: none;
+  outline: none;
+  height: 20%;
+  width: 20%;
+  color: hsl(0,50%,50%);
+}
+
+.pdfButton {
+  border: 2px solid hsl(240,50%,70%);
+  background: none;
+  outline: none;
+  height: 15%;
+  width: 15%;
+  color: hsl(240,50%,70%);
+}
+
+.pdfButton:hover {
+  color: white;
+  background-color: hsl(240,50%,70%);
+}
+
+.billInfo {
+  width: 90%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px 10px 10px 10px;
+}
+
+.directionButtons {
+  outline: none;
+  font-size: 15pt;
+  border: none;
+  height: 40%;
+  background: none;
+  color: black;
+  color: hsl(240,50%,70%);
+}
+
+.voteButton:hover {
+  background-color: hsl(0,50%,50%);
+  color: white;
 }

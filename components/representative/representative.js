@@ -41,7 +41,6 @@
         }).then(function (response) {
           vm.rep = response.data.results;
           repData.single = vm.rep
-          console.log(repData.single);
           $http({
             method: 'GET',
             url: APP_CONFIG.api_baseurl+'/people/donors/'+repData.single[0].crp_id
