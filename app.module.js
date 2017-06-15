@@ -64,7 +64,7 @@
       domain: 'nathanedlen.auth0.com',
       responseType: 'token id_token',
       audience: 'https://nathanedlen.auth0.com/userinfo',
-      redirectUri: 'http://smarvotes.co/callback',
+      redirectUri: 'https://smartvotes.co/callback',
       scope: 'openid profile email'
     });
 
