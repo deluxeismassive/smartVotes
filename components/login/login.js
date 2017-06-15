@@ -13,10 +13,10 @@
       vm.show = showPage
       vm.auth = authService
 
-      if (localStorage) {
+      if (localStorage.accessToken) {
         vm.email = JSON.parse(localStorage.profile).email
       }
-      
+
       $http({
         method: 'GET',
         url: APP_CONFIG.api_baseurl+'/votes/'+vm.email
