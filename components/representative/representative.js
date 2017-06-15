@@ -12,6 +12,14 @@
       vm.toggle = showPage
       vm.showMod = showPage
       vm.state = params
+
+      vm.backToMap = function() {
+        vm.showMod.map = !vm.showMod.map
+        vm.showMod.repModule = !vm.showMod.repModule
+        vm.showMod.repDetails = !vm.showMod.repDetails
+        vm.showMod.donorDetails = !vm.showMod.donorDetails
+      }
+
       params.renderCongress = function() {
         $http({
           method: 'GET',
