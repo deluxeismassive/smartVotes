@@ -6,7 +6,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 90px;
 }
 
 .voteCount {
@@ -23,7 +23,7 @@
 
 .billTitle {
   font-size: 16pt;
-  margin-top: 5px;
+  margin-top: 8px;
   margin-left: 5px;
 }
 
@@ -66,7 +66,8 @@
 
 .billInfo {
   width: 90%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-left: 2px solid hsl(240,50%,70%);
+  border-right: 2px solid hsl(240,50%,70%);
   padding: 10px 10px 10px 10px;
 }
 

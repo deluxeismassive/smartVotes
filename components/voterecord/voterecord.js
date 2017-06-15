@@ -70,6 +70,10 @@
         vm.selector++
       }
 
+      vm.backwardCycle = function() {
+        vm.selector--
+      }
+
       vm.displayPdf = function() {
         $window.open(vm.votesDb[vm.selector].pdf)
       }

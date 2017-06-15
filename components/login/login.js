@@ -13,19 +13,21 @@
       vm.show = showPage
       vm.auth = authService
 
-      if (localStorage.accessToken) {
+      if (localStorage.access_token) {
         vm.email = JSON.parse(localStorage.profile).email
+
+        $http({
+          method: 'GET',
+          url: APP_CONFIG.api_baseurl+'/votes/'+vm.email
+        }).then(function (response) {
+          vm.votes.userVotes = response.data
+          console.log(vm.votes.userVotes);
+        }, function(response) {
+          console.log(response);
+        })
       }
 
-      $http({
-        method: 'GET',
-        url: APP_CONFIG.api_baseurl+'/votes/'+vm.email
-      }).then(function (response) {
-        vm.votes.userVotes = response.data
-        console.log(vm.votes.userVotes);
-      }, function(response) {
-        console.log(response);
-      })
+
 
       vm.representativeToggle = function() {
         vm.show.login = !vm.show.login

@@ -60,7 +60,7 @@
         <span class="percentFooters">Voted with Party</span>
       </div>
       <div class="votesWithParty percentDisplay">
-        {{$ctrl.voteScore}}% </br>
+        {{$ctrl.voteScore.toFixed(0)}}% </br>
         <span class="percentFooters">Alligned </br> {{$ctrl.votes.userVotes.length}} Votes</span>
       </div>
     </div>
