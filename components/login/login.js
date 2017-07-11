@@ -21,7 +21,6 @@
           url: APP_CONFIG.api_baseurl+'/votes/'+vm.email
         }).then(function (response) {
           vm.votes.userVotes = response.data
-          console.log(vm.votes.userVotes);
         }, function(response) {
           console.log(response);
         })

@@ -1,4 +1,4 @@
-(function() {
+  (function() {
   'use strict'
 
   angular.module('app')
@@ -32,29 +32,30 @@
         url: APP_CONFIG.api_baseurl+'/bills/db'
       }).then(function (response) {
         vm.votesDb = response.data
+        vm.yesVotes = []
+        vm.votes.userVotes.forEach( e => {
+          if (e.yes_no === true) {
+            vm.yesVotes.push(e.bill_id)
+          }
+        })
+        vm.noVotes = []
+        vm.votes.userVotes.forEach( e => {
+          if (e.yes_no === false) {
+            vm.noVotes.push(e.bill_id)
+          }
+        })
       }, function(response) {
         console.log(response);
       })
 
 
 
-      vm.yesVote = function(index) {
-        var vote = {bill_id: vm.votesDb[vm.selector].id, yes_no: true, user_id: localStorage.userId, bill_uri: vm.votesDb[vm.selector].bill_uri}
-        $http({
-          method: 'PUT',
-          url: APP_CONFIG.api_baseurl+'/votes',
-          data: vote
-        }).then(function (response) {
-          console.log(response);
-          console.log(vm.votes);
-        }, function(response) {
-          console.log(response);
-        })
-      }
+      vm.yesVote = function($event, index) {
+        var el = angular.element($event.currentTarget)
+        el.parent().children().removeClass('noVoted')
+        el.addClass('yesVoted')
+        var vote = {bill_id: vm.votesDb[index].id, yes_no: true, user_id: localStorage.userId, bill_uri: vm.votesDb[index].bill_uri}
 
-      vm.noVote = function(index) {
-        console.log(vm.votesDb);
-        var vote = {bill_id: vm.votesDb[vm.selector].id, yes_no: false, user_id: localStorage.userId, bill_uri: vm.votesDb[vm.selector].bill_uri}
         $http({
           method: 'PUT',
           url: APP_CONFIG.api_baseurl+'/votes',
@@ -66,16 +67,28 @@
         })
       }
 
-      vm.forwardCycle = function() {
-        vm.selector++
+      vm.noVote = function($event, index) {
+        var el = angular.element($event.currentTarget)
+        el.parent().children().removeClass('yesVoted')
+        el.addClass('noVoted')
+        var vote = {bill_id: vm.votesDb[index].id, yes_no: false, user_id: localStorage.userId, bill_uri: vm.votesDb[index].bill_uri}
+        $http({
+          method: 'PUT',
+          url: APP_CONFIG.api_baseurl+'/votes',
+          data: vote
+        }).then(function (response) {
+          console.log(response);
+        }, function(response) {
+          console.log(response);
+        })
       }
 
-      vm.backwardCycle = function() {
-        vm.selector--
+      vm.displayPdf = function(index) {
+        $window.open(vm.votesDb[index].pdf)
       }
 
-      vm.displayPdf = function() {
-        $window.open(vm.votesDb[vm.selector].pdf)
+      vm.votes.getExistingYesVote = function() {
+
       }
 
     }

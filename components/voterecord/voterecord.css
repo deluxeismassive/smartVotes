@@ -3,10 +3,10 @@
   width: 90%;
   margin: auto;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 90px;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .voteCount {
@@ -50,6 +50,15 @@
   color: hsl(0,50%,50%);
 }
 
+.yesvoteButton {
+  border: 2px solid hsl(120,50%,50%);
+  background: none;
+  outline: none;
+  height: 20%;
+  width: 20%;
+  color: hsl(120,50%,50%);
+}
+
 .pdfButton {
   border: 2px solid hsl(240,50%,70%);
   background: none;
@@ -66,9 +75,8 @@
 
 .billInfo {
   width: 90%;
-  border-left: 2px solid hsl(240,50%,70%);
-  border-right: 2px solid hsl(240,50%,70%);
-  padding: 10px 10px 10px 10px;
+  border-bottom: 2px solid hsl(240,50%,70%);
+  padding: 10px 10px 30px 10px;
 }
 
 .directionButtons {
@@ -82,6 +90,21 @@
 }
 
 .voteButton:hover {
+  background-color: hsl(0,50%,50%);
+  color: white;
+}
+
+.yesvoteButton:hover {
+  background-color: hsl(120,50%,50%);
+  color: white;
+}
+
+.yesVoted {
+  background-color: hsl(120,50%,50%);
+  color: white;
+}
+
+.noVoted {
   background-color: hsl(0,50%,50%);
   color: white;
 }
